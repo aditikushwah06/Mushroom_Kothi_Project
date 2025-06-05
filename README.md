@@ -17,6 +17,21 @@
 - 💧 If **humidity < 70%**, the **Humidifier** (LED2) turns ON.
 - 📊 Temperature and humidity values are updated every second on the Serial Monitor.
 
+## 🔌 Circuit Connections
+
+| Component        | ESP32 Pin         | Notes                            |
+|------------------|-------------------|----------------------------------|
+| DHT22 VCC        | 3.3V              | Power Supply                     |
+| DHT22 GND        | GND               | Ground                           |
+| DHT22 DATA       | GPIO 14           | Data signal to ESP32             |
+| LED1 (Fan Relay) | GPIO 26           | Controls Fan (via relay or LED)  |
+| LED2 (Humidifier Relay) | GPIO 27    | Controls Humidifier (via relay)  |
+| LED1 Anode       | GPIO 26 → 220Ω → + | Current-limiting resistor        |
+| LED2 Anode       | GPIO 27 → 220Ω → + | Same as above                    |
+| LED1 & LED2 Cathode | GND           | Connect to Ground                |
+
+> In a real implementation, replace LEDs with **relay modules** connected to the fan and humidifier safely.
+
 ## 🌐 Wokwi Simulation
 👉 [View Wokwi Simulation](https://wokwi.com/projects/432744739265751041)
 
